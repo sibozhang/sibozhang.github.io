@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<!-- htmlcs-disable -->
+<!--[if lt IE 9]><html class="ie"><![endif]-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Apollo Scape</title>
+    <link rel="import" href="/common/bootstrap/bootstrap.min.js">
+    <link rel="import" href="/common/meta.html?__inline">
+    <link rel="import" href="/common/css.html?__inline">
+    <link rel="import" href="/common/js.html?__inline">
+
+    <link rel="stylesheet" type="text/css" href="common/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="/css/leader_board/index.css">
+    <link rel="import" href="/common/header.html?__inline">
+</head>
+
+<body>
+    <section class="main-wrapper pc-container">
+        <div class="main">
+            <div class="left-content-wrapper">
+                <div class="left-content-item">
+                    <h1>
+                        Leaderboard
+                        <span class="head-text-small" data-type="scene">Scene Parsing</span>
+                        <span class="head-text-small" data-type="car">Car Instance</span>
+                        <span class="head-text-small" data-type="lane">Lane Segmentation</span>
+                        <span class="head-text-small" data-type="self">Localization</span>
+                        <span class="head-text-small" data-type="trajectory">Trajectory</span>
+                        <span class="head-text-small" data-type="detection">Detection</span>
+                        <span class="head-text-small" data-type="tracking">Tracking</span>
+                        <span class="head-text-small" data-type="stereo">Stereo</span>
+                    </h1>
+                </div>
+                <div class="left-content-item">
+                    <div class="schedule-wrapper" id="scene">
+                        <div class="rank-table-wrapper">
+                            <div class="rank-table global-rank">
+                                <div class="rank-head">
+                                    <div class="rank-head-tr">
+                                        <div class="rank-th rank-th-lane">Rank</div>
+                                        <div class="rank-th rank-th-lane">Method</div>
+                                        <div class="rank-th rank-th-lane">Score</div>
+                                    </div>
+                                </div>
+                                <div class="rank-table-body">
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">CVPR Challenge rank 1</div>
+                                        <div class="rank-td rank-td-lane">Megvii</div>
+                                        <div class="rank-td rank-td-lane">0.3399</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">CVPR Challenge rank 2</div>
+                                        <div class="rank-td rank-td-lane">Smart_Vision_SG</div>
+                                        <div class="rank-td rank-td-lane">0.3022</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">CVPR Challenge rank 3</div>
+                                        <div class="rank-td rank-td-lane">SZU_N606</div>
+                                        <div class="rank-td rank-td-lane">0.2502</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">4</div>
+                                        <div class="rank-td rank-td-lane">Autopilot</div>
+                                        <div class="rank-td rank-td-lane">0.24968</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">5</div>
+                                        <div class="rank-td rank-td-lane">ChiZhouMeiziHao</div>
+                                        <div class="rank-td rank-td-lane">0.24475</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">6</div>
+                                        <div class="rank-td rank-td-lane">xiaoming</div>
+                                        <div class="rank-td rank-td-lane">0.21865</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">7</div>
+                                        <div class="rank-td rank-td-lane">P_Beta</div>
+                                        <div class="rank-td rank-td-lane">0.21546</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">8</div>
+                                        <div class="rank-td rank-td-lane">xiteng</div>
+                                        <div class="rank-td rank-td-lane">0.20405</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">9</div>
+                                        <div class="rank-td rank-td-lane">iRedRum</div>
+                                        <div class="rank-td rank-td-lane">0.20327</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">10</div>
+                                        <div class="rank-td rank-td-lane">zwhh</div>
+                                        <div class="rank-td rank-td-lane">0.20316</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">11</div>
+                                        <div class="rank-td rank-td-lane">William Wang</div>
+                                        <div class="rank-td rank-td-lane">0.19895</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">12</div>
+                                        <div class="rank-td rank-td-lane">Mhttx</div>
+                                        <div class="rank-td rank-td-lane">0.19817</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">13</div>
+                                        <div class="rank-td rank-td-lane">G934</div>
+                                        <div class="rank-td rank-td-lane">0.19800</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">14</div>
+                                        <div class="rank-td rank-td-lane">InnerPeace</div>
+                                        <div class="rank-td rank-td-lane">0.19709</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">15</div>
+                                        <div class="rank-td rank-td-lane">dishen</div>
+                                        <div class="rank-td rank-td-lane">0.19348</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">16</div>
+                                        <div class="rank-td rank-td-lane">tkuanlun350</div>
+                                        <div class="rank-td rank-td-lane">0.18913</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">17</div>
+                                        <div class="rank-td rank-td-lane">Azat Akhtyamov</div>
+                                        <div class="rank-td rank-td-lane">0.18362</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">18</div>
+                                        <div class="rank-td rank-td-lane">SeetaTech</div>
+                                        <div class="rank-td rank-td-lane">0.18122</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">19</div>
+                                        <div class="rank-td rank-td-lane">svendroste</div>
+                                        <div class="rank-td rank-td-lane">0.18064</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">20</div>
+                                        <div class="rank-td rank-td-lane">AlbertoCastaño</div>
+                                        <div class="rank-td rank-td-lane">0.17734</div>
+                                    </div>
+
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">21</div>
+                                        <div class="rank-td rank-td-lane">Holy Fit</div>
+                                        <div class="rank-td rank-td-lane">0.17105</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">22</div>
+                                        <div class="rank-td rank-td-lane">kekedan</div>
+                                        <div class="rank-td rank-td-lane">0.15647</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">23</div>
+                                        <div class="rank-td rank-td-lane">xiaoyucoco1314</div>
+                                        <div class="rank-td rank-td-lane">0.15463</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">24</div>
+                                        <div class="rank-td rank-td-lane">lbin</div>
+                                        <div class="rank-td rank-td-lane">0.15137</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">25</div>
+                                        <div class="rank-td rank-td-lane">mingye</div>
+                                        <div class="rank-td rank-td-lane">0.15065</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">26</div>
+                                        <div class="rank-td rank-td-lane">See--</div>
+                                        <div class="rank-td rank-td-lane">0.14077</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">27</div>
+                                        <div class="rank-td rank-td-lane">Undecided</div>
+                                        <div class="rank-td rank-td-lane">0.13146</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">28</div>
+                                        <div class="rank-td rank-td-lane">Eyon</div>
+                                        <div class="rank-td rank-td-lane">0.12914</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">29</div>
+                                        <div class="rank-td rank-td-lane">Insight</div>
+                                        <div class="rank-td rank-td-lane">0.11830</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">30</div>
+                                        <div class="rank-td rank-td-lane">w_________g</div>
+                                        <div class="rank-td rank-td-lane">0.11096</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">31</div>
+                                        <div class="rank-td rank-td-lane">GodEye</div>
+                                        <div class="rank-td rank-td-lane">0.11095</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">32</div>
+                                        <div class="rank-td rank-td-lane">bnrc</div>
+                                        <div class="rank-td rank-td-lane">0.11094</div>
+                                    </div>
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane">33</div>
+                                        <div class="rank-td rank-td-lane">makesense</div>
+                                        <div class="rank-td rank-td-lane">0.10855</div>
+                                    </div>
+                                </div>
+                                <div class="rank-table-body scene-body">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="schedule-wrapper" id="car">
+                        <div class="rank-table-wrapper">
+                            <div class="rank-table global-rank">
+                                <div class="rank-head">
+                                    <div class="rank-head-tr">
+                                        <div class="rank-th rank-th-lane">
+                                            Rank
+                                        </div>
+                                        <div class="rank-th rank-th-lane-large">
+                                            Method
+                                        </div>
+                                        <div class="red rank-th rank-th-lane ap">
+                                            AP
+                                        </div>
+                                        <div class="rank-th rank-th-lane ap-50-car">
+                                            AP<sup>50</sup>
+                                        </div>
+                                        <div class="rank-th rank-th-lane ap-75-car">
+                                            AP<sup>75</sup>
+                                        </div>
+                                        <div class="rank-th rank-th-lane ap-s-car">
+                                            AP<sup>S</sup>
+                                        </div>
+                                        <div class="rank-th rank-th-lane ap-m-car">
+                                            AP<sup>M</sup>
+                                        </div>
+                                        <div class="rank-th rank-th-lane ap-l-car">
+                                            AP<sup>L</sup>
+                                        </div>
+                                        <div class="rank-th rank-th-lane ap-1-car">
+                                            AR<sup>1</sup>
+                                        </div>
+                                        <div class="rank-th rank-th-lane ar-10-car">
+                                            AR<sup>10</sup>
+                                        </div>
+                                        <div class="rank-th rank-th-lane ar-100-car">
+                                            AR<sup>100</sup>
+                                        </div>
+                                        <div class="rank-th rank-th-lane ar-s-car">
+                                            AR<sup>S</sup>
+                                        </div>
+                                        <div class="rank-th rank-th-lane ar-m-car">
+                                            AR<sup>M</sup>
+                                        </div>
+                                        <div class="rank-th rank-th-lane ar-l-car">
+                                            AR<sup>L</sup>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rank-table-body car-body">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="schedule-wrapper hide" id="lane">
+                        <div class="rank-table-wrapper">
+                            <div class="rank-table global-rank">
+                                <div class="rank-head">
+                                    <div class="rank-head-tr">
+                                        <div class="rank-th rank-th-lane rank-lane">
+                                            Rank
+                                        </div>
+                                        <div class="rank-th rank-th-lane method-lane">
+                                            Method
+                                        </div>
+                                        <div class="rank-th rank-th-lane mean-lane">
+                                            Mean Iou
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="rank-table-body lane-body">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="schedule-wrapper hide" id="self">
+                        <div class="rank-table-wrapper">
+                            <div class="rank-table global-rank">
+                                <div class="rank-head">
+                                    <div class="rank-head-tr">
+                                        <div class="rank-th rank-th-lane rank-self">
+                                            Rank
+                                        </div>
+                                        <div class="rank-th rank-th-lane method-self">
+                                            Method
+                                        </div>
+                                        <div class="rank-th rank-th-lane mean-self">
+                                            Mean
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="rank-table-body self-body">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="schedule-wrapper hide" id="trajectory">
+                        <div class="rank-table-wrapper">
+                            <div class="rank-table global-rank">
+                                <div class="rank-head">
+                                    <div class="rank-head-tr">
+                                        <div class="rank-th rank-th-lane trajectory">
+                                            Rank
+                                        </div>
+                                        <div class="rank-th rank-th-lane-small trajectory">
+                                            Method
+                                        </div>
+                                        <div class="rank-th rank-th-lane trajectory">
+                                            WSADE
+                                        </div>
+                                        <div class="rank-th rank-th-lane trajectory">
+                                            ADEv
+                                        </div>
+                                        <div class="rank-th rank-th-lane trajectory">
+                                            ADEp
+                                        </div>
+                                        <div class="rank-th rank-th-lane trajectory">
+                                            ADEb
+                                        </div>
+                                        <div class="rank-th rank-th-lane trajectory">
+                                            WSFDE
+                                        </div>
+                                        <div class="rank-th rank-th-lane trajectory">
+                                            FDEv
+                                        </div>
+                                        <div class="rank-th rank-th-lane trajectory">
+                                            FDEp
+                                        </div>
+                                        <div class="rank-th rank-th-lane trajectory">
+                                            FDEb
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rank-table-body">
+                                    <div class="rank-tr img1" id="trajectory-30">
+                                        <div class="rank-td rank-td-lane ">baseline</div>
+                                        <div class="rank-td rank-td-lane-large"><a href="http://gamma.cs.unc.edu/TPredict/TrafficPredict.html">TrafficPredict</a></div>
+                                        <div class="rank-td rank-td-lane">8.5881</div>
+                                        <div class="rank-td rank-td-lane">7.9467</div>
+                                        <div class="rank-td rank-td-lane">7.1811</div>
+                                        <div class="rank-td rank-td-lane">12.8805</div>
+                                        <div class="rank-td rank-td-lane">24.2262</div>
+                                        <div class="rank-td rank-td-lane">12.7757</div>
+                                        <div class="rank-td rank-td-lane">11.1210</div>
+                                        <div class="rank-td rank-td-lane">22.7912</div>
+                                    </div>
+                                </div>
+                                <div class="rank-tr" id="trajectory-30-30">
+                                    <div class="rank-td rank-td-link">
+<!-- <b>Team：</b> Yuexin Ma, Xinge Zhu, Sibo Zhang, Ruigang Yang, Wenping Wang, and Dinesh Manocha; BaiduRAL<br/>
+<b>Method Description： </b>Based on LSTM, our approach uses an instance layer to learn instances’ movements and interactions and has a category layer to learn the similarities of instances belonging to the same type to reﬁne the prediction. <br/>
+<b>Publication：</b>TrafficPredict:  Trajectory Prediction for Heterogeneous Traffic-Agents  [<a href="https://arxiv.org/pdf/1811.02146.pdf">PDF</a>]. AAAI(oral), 2019 -->
+
+Team： Yuexin Ma, Xinge Zhu, Sibo Zhang, Ruigang Yang, Wenping Wang, and Dinesh Manocha; BaiduRAL<br/>
+Method Description：Based on LSTM, our approach uses an instance layer to learn instances’ movements and interactions and has a category layer to learn the similarities of instances belonging to the same type to reﬁne the prediction. <br/>
+Publication：<b>TrafficPredict: </b> Trajectory Prediction for Heterogeneous Traffic-Agents  [<a href="https://arxiv.org/pdf/1811.02146.pdf">PDF</a>]. AAAI(oral), 2019
+
+
+                                    </div>
+
+                                </div>
+                                <div class="rank-table-body trajectory-body">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="schedule-wrapper hide" id="detection">
+                            <div class="rank-table-wrapper">
+                                <div class="rank-table global-rank">
+                                    <div class="rank-head">
+                                        <div class="rank-head-tr">
+                                            <div class="rank-th rank-th-lane-small detection">Rank</div>
+                                            <div class="rank-th rank-th-lane detection">Method</div>
+                                            <div class="rank-th rank-th-lane detection">mAP</div>
+                                            <div class="rank-th rank-th-lane detection">AP(Car)</div>
+                                            <div class="rank-th rank-th-lane detection">AP(Pedestrian)</div>
+                                            <div class="rank-th rank-th-lane detection">AP(Cyclist)</div>
+                                        </div>
+                                    </div>
+                                    <div class="rank-table-body">
+                                        <div class="rank-tr">
+                                            <div class="rank-td rank-td-lane-small">baseline</div>
+                                            <div class="rank-td rank-td-lane">cnnseg</div>
+                                            <div class="rank-td rank-td-lane">44.974</div>
+                                            <div class="rank-td rank-td-lane">55.926</div>
+                                            <div class="rank-td rank-td-lane">35.398</div>
+                                            <div class="rank-td rank-td-lane">43.598</div>
+                                        </div>
+                                    </div>
+                                    <div class="rank-table-body detection-body">
+
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="schedule-wrapper hide" id="tracking">
+                        <div class="rank-table-wrapper">
+                            <div class="rank-table global-rank">
+                                <div class="rank-head">
+                                    <div class="rank-head-tr">
+                                        <div class="rank-th rank-th-lane tracking">Rank</div>
+                                        <div class="rank-th rank-th-lane tracking">Method</div>
+                                        <div class="rank-th rank-th-lane tracking">MOTAm</div>
+                                        <div class="rank-th rank-th-lane tracking">MOTA(Car)</div>
+                                        <div class="rank-th rank-th-lane tracking">MOTA(Pedestrian)</div>
+                                        <div class="rank-th rank-th-lane tracking">MOTA(Cyclist)</div>
+                                    </div>
+                                </div>
+                                <div class="rank-table-body">
+                                    <div class="rank-tr">
+                                        <div class="rank-td rank-td-lane-small">baseline</div>
+                                        <div class="rank-td rank-td-lane">IOU_tracker(based on cnnseg)</div>
+                                        <div class="rank-td rank-td-lane">18.973</div>
+                                        <div class="rank-td rank-td-lane">56.919</div>
+                                        <div class="rank-td rank-td-lane">0</div>
+                                        <div class="rank-td rank-td-lane">0</div>
+                                    </div>
+                                </div>
+                                <div class="rank-table-body tracking-body">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="schedule-wrapper hide" id="stereo">
+                        <div class="rank-table-wrapper">
+                            <div class="rank-table global-rank">
+                                <div class="rank-head">
+                                    <div class="rank-head-tr">
+                                        <div class="rank-th rank-th-lane stereo">Rank</div>
+                                        <div class="rank-th rank-th-lane stereo">Method</div>
+                                        <div class="rank-th rank-th-lane stereo">D1_all</div>
+                                        <div class="rank-th rank-th-lane stereo">D1_fg</div>
+                                        <div class="rank-th rank-th-lane stereo">D1_bg</div>
+                                    </div>
+                                </div>
+                                <div class="rank-table-body stereo-body">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript" src="/js/leader_board.js"></script>
+    <link rel="import" href="/common/footer.html?__inline">
+</body>
+<script>
+    $().ready(function() {
+       $("#trajectory-30-30").css('display','none');
+       $('#trajectory-30').bind('click', function() {
+           if($(this).attr("class")=="rank-tr img1"){
+               $(this).attr("class","rank-tr img2");
+               $("#trajectory-30-30").toggle();
+           }else{
+               $(this).attr("class","rank-tr img1");
+               $("#trajectory-30-30").toggle();
+           }
+        });
+    });
+</script>
+</html>

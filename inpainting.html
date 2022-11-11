@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!-- htmlcs-disable -->
+<!--[if lt IE 9]><html class="ie"><![endif]-->
+<html lang="en">
+
+<head>
+    <link rel="import" href="/common/meta.html?__inline">
+    <link rel="import" href="/common/css.html?__inline">
+    <link rel="import" href="/common/js.html?__inline">
+
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 750px)" href="/css/scene/github.css">
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 750px)" href="/css/scene/scene.css">
+    <style type="text/css">
+    .scene-body .content .github_table {
+        border: unset;
+        height: unset;
+    }
+
+    .markdown-body p,
+    .markdown-body blockquote,
+    .markdown-body ul,
+    .markdown-body ol,
+    .markdown-body dl,
+    .markdown-body table,
+    .markdown-body pre {
+        font-size: 14px;
+        color: #666;
+    }
+    .markdown-body {
+        font-family: PingFangSC-Regular;
+    }
+    .eccv a.submit-achievement {
+        border: #006aff 1px solid;
+        color: #006aff;
+        cursor: pointer;
+    }
+    .markdown-body .title-1 {
+        font-size: 20px;
+        color: #333;
+    }
+
+    .markdown-body .mt60 {
+        margin-top: 60px !important;
+    }
+
+    .scene-body .content {
+        padding-left: 25px;
+    }
+
+    .tip-top {
+        word-wrap: normal;
+    }
+    .markdown-body .publication-table {
+        overflow: visible;
+        display: table;
+    }
+    .word-1.indent {
+        padding-left: 1.2em;
+    }
+    </style>
+</head>
+
+<body>
+    <link rel="import" href="/common/header.html?__inline">
+
+    <section class="banner main-wrapper scene-banner" id="banner-container">
+    </section>
+    <section class="main-wrapper">
+        <div class="main scene-body" id="scene-container">
+            <div class="menu fl"></div>
+            <div class="content fl">
+                <p class="title-1 mt60" id="to_introduction_href">1 · Introduction</p>
+                <p class="word-1 mt20" id="to_collection_href">
+                     Inpainting dataset consists of synchronized Labeled image and LiDAR scanned point clouds. It captured by HESAI Pandora All-in-One Sensing Kit. It is collected under various lighting conditions and traffic densities in China.                 </p>
+                </p>
+                <div class="fl mt20 demo">
+                    <img src="./public/img/scene/inpainting.gif" width="500px">
+                </div>
+                <div class="cb"></div>
+                <p class="title-1 mt60" id="to_data_href">2 · Data Download</p>
+                <p class="word-1 mt20" id="to_collection_href">
+                    <!-- The 3D Lidar object detection and tracking benchmark consists of about 53min training sequences and 50min testing sequences. The data is captured at 10 frames per second and labeled at 2 frames per second. We provide all the raw data and labeled data. -->
+                </p>
+
+                <p class="title-2 mt20">Data</p>
+                <div class="down_list mt10 clearfix">
+                    <a class="down_btn fl mr10" value="1534313570-1534313579_mask">mask_and_image_0.zip</a>
+                    <a class="down_btn fl mr10" value="1534313570-1534313579">data_0.zip</a>
+                    <a class="down_btn fl mr10" value="1534313570-1534313579_lidar_bg">lidar_bg_0.zip</a>
+                </div>
+
+                <div class="down_list mt10 clearfix">
+                    <a class="down_btn fl mr10" value="1534313592-1534313595_mask">mask_and_image_1.zip</a>
+                    <a class="down_btn fl mr10" value="1534313592-1534313595">data_1.zip</a>
+                    <a class="down_btn fl mr10" value="1534313592-1534313595_lidar_bg">lidar_bg_1.zip</a>
+                </div>
+
+                <div class="down_list mt10 clearfix">
+                    <a class="down_btn fl mr10" value="1534313648-1534313656_mask">mask_and_image_2.zip</a>
+                    <a class="down_btn fl mr10" value="1534313648-1534313656">data_2.zip</a>
+                    <a class="down_btn fl mr10" value="1534313648-1534313656_lidar_bg">lidar_bg_2.zip</a>
+                </div>
+
+                <div class="down_list mt10 clearfix">
+                    <a class="down_btn fl mr10" value="1534313856-1534313869_mask">mask_and_image_3.zip</a>
+                    <a class="down_btn fl mr10" value="1534313856-1534313869">data_3.zip</a>
+                    <a class="down_btn fl mr10" value="1534313856-1534313869_lidar_bg">lidar_bg_3.zip</a>
+                </div>
+
+                <!-- <div class="title-2 mt40">
+                    Data
+                </div>
+                <div class="down_list mt20 clearfix">
+                    <a class="down_btn fl mr10" value="detection_train_pcd_1.zip">detection_train_pcd_1.zip</a>
+                    <a class="down_btn fl mr10" value="detection_train_pcd_2.zip">detection_train_pcd_2.zip</a>
+                    <a class="down_btn fl mr10" value="detection_train_pcd_3.zip">detection_train_pcd_3.zip</a> -->
+                <!-- </div>
+                <div class="down_list mt20 clearfix">
+                    <a class="down_btn fl mr10" value="detection_train_bin_1.zip">detection_train_bin_1.zip</a>
+                    <a class="down_btn fl mr10" value="detection_train_bin_2.zip">detection_train_bin_2.zip</a>
+                    <a class="down_btn fl mr10" value="detection_train_bin_3.zip">detection_train_bin_3.zip</a>
+                </div>
+                <!-- <div class="down_list mt20 clearfix">
+                    <a class="down_btn fl mr10" value="tracking_train_pcd_1.zip">tracking_train_pcd_1.zip</a>
+                    <a class="down_btn fl mr10" value="tracking_train_pcd_2.zip">tracking_train_pcd_2.zip</a>
+                    <a class="down_btn fl mr10" value="tracking_train_pcd_3.zip">tracking_train_pcd_3.zip</a>
+                </div>
+                <div class="down_list mt20 clearfix">
+                    <a class="down_btn fl mr10" value="tracking_train_bin_1.zip">tracking_train_bin_1.zip</a>
+                    <a class="down_btn fl mr10" value="tracking_train_bin_2.zip">tracking_train_bin_2.zip</a>
+                    <a class="down_btn fl mr10" value="tracking_train_bin_3.zip">tracking_train_bin_3.zip</a>
+                </div> -->
+
+                <!-- <div class="down_list mt20 clearfix">
+                    <a class="down_btn fl mr10" value="detection_train_label.zip"> detection_train_label.zip</a>
+                    <a class="down_btn fl mr10" value="tracking_train_label.zip"> tracking_train_label.zip</a>
+                    <a class="down_btn fl mr10" value="tracking_train_pose.zip"> tracking_train_pose.zip</a>
+                </div> -->
+                <!-- <div class="down_list mt20 clearfix">
+                    <a class="down_btn fl mr10" value="detection_train_label_kitti.zip"> detection_train_label_kitti.zip</a>
+
+                </div> -->
+
+                <!-- <div class="title-2 mt40">
+                    Testing data
+                </div>
+                <div class="down_list mt20 clearfix">
+                    <a class="down_btn fl mr10" value="detection_test_pcd_1.zip">detection_test_pcd_1.zip</a>
+                    <a class="down_btn fl mr10" value="detection_test_pcd_2.zip">detection_test_pcd_2.zip</a>
+                    <a class="down_btn fl mr10" value="detection_test_pcd_3.zip">detection_test_pcd_3.zip</a>
+                </div>
+                <div class="down_list mt20 clearfix">
+                    <a class="down_btn fl mr10" value="detection_test_bin_1.zip">detection_test_bin_1.zip</a>
+                    <a class="down_btn fl mr10" value="detection_test_bin_2.zip">detection_test_bin_2.zip</a>
+                    <a class="down_btn fl mr10" value="detection_test_bin_3.zip">detection_test_bin_3.zip</a>
+                </div> -->
+                <!-- <div class="down_list mt20 clearfix">
+                    <a class="down_btn fl mr10" value="tracking_test_pcd_1.zip">tracking_test_pcd_1.zip</a>
+                    <a class="down_btn fl mr10" value="tracking_test_pcd_2.zip">tracking_test_pcd_2.zip</a>
+                    <a class="down_btn fl mr10" value="tracking_test_pcd_3.zip">tracking_test_pcd_3.zip</a>
+                </div>
+                <div class="down_list mt20 clearfix">
+                    <a class="down_btn fl mr10" value="tracking_test_bin_1.zip">tracking_test_bin_1.zip</a>
+                    <a class="down_btn fl mr10" value="tracking_test_bin_2.zip">tracking_test_bin_2.zip</a>
+                    <a class="down_btn fl mr10" value="tracking_test_bin_3.zip">tracking_test_bin_3.zip</a>
+                </div> -->
+
+                <!-- <div class="down_list mt20 clearfix">
+                    <a class="down_btn fl mr10" value="tracking_test_pose.zip">tracking_test_pose.zip</a>
+                </div> -->
+
+                <div class="cb"></div>
+                <p class="title-1 mt60" id="to_dataset_href">3 · Data Structure</p>
+
+                <p class="word-1 mt10">The folder structure of the Inpainting Dataset is as follows:</p>
+                <p class="word-1 mt10">
+                    1) xxx-yyy_mask.zip: xxx.aaa.jpg is original image. xxx.aaa.png is labelled mask of cars.
+                </p>
+                <p class="word-1 mt10">
+                    2) xxx-yyy.zip: Data includes ds_map.ply, global_poses.txt, rel_poses.txt, xxx.aaa_optR.xml. ds_map.ply is dense map build from lidar frames.
+                </p>
+                <p class="word-1 mt10">
+                    3) lidar_bg.zip: lidar background point cloud in ply format.
+                </p>
+                
+                <!-- <p class="title-1 mt60" id="to_evaluation_href">4 · Evaluation</p> -->
+                
+                <p class="title-1 mt60" id="to_publication_href">4 · Publication</p>
+                <table class="publication-table" style="width:100%" cellspacing="10" valign="top">
+                    <tr>
+                    <td valign="top" align='left'>
+                    <p>Please cite our paper in your publications.</p >
+                    <p>DVI: Depth Guided Video Inpainting for Autonomous Driving [<a href="hhttps://arxiv.org/pdf/2007.08854.pdf"><font color="red">PDF</a></font>] <a href="https://github.com/sibozhang/Depth-Guided-Inpainting">[Github]</a>  <a href="https://github.com/ApolloScapeAuto/dataset-api/blob/master/inpainting/dvi_bibtex.txt">[BibTex]</a>
+                      <br/>
+                      Miao Liao and Feixiang Lu and Dingfu Zhou and Sibo Zhang and Wei Li and Ruigang Yang<br> <em>ECCV 2020</em><br><br>
+                    </tr>
+                </table>
+
+
+                <!-- <div class="cb"></div>
+                <p class="title-1 mt60" id="to_reference_href">Q & A</p>
+                <p class="word-1 mt10">
+                    Q1. Is there corresponding image data included in the dataset?</p><p class="word-1 mt10">
+                    We have not labeled the image data. Current challenge is just based on the Lidar data.</p><p class="word-1 mt10">
+                    Q2. Is there any difference between .pcd file and .bin file?</p><p class="word-1 mt10">
+                    They are just different in format. You can use any of them in your work.</p><p class="word-1 mt10">
+                    Q3. Should I cut the lidar data like processing KITTI dataset?</p><p class="word-1 mt10">
+                    No, you should use all the data.</p><p class="word-1 mt10">
+                    Q4. What's data annotaion rule for different type?</p><p class="word-1 mt10">
+                    annotation is based on lidar point clouds not on actual object size</p><p class="word-1 mt10">
+                    Small vehicles: small cars, SUVs. </p><p class="word-1 mt10">
+                    Large vehicles: Motor vehicles with a height greater than 2 m or a length greater than 6 m. </p><p class="word-1 mt10">
+                    Motorcyclist and Bicyclist: people riding motorcycles, electric cars, tricycles; bicycles (some people riding or pushing).</p><p class="word-1 mt10">
+                    Pedestrians: include people who are carrying luggage, pushing a car (a type of car not covered above), and a person in a wheelchair.</p><p class="word-1 mt10">
+                    Traffic cones : All traffic cones within 60 meters of ego car.
+                </p>
+                <div class="mt60" style="font-size: 18px;text-align: center;">The dataset we released is &nbsp;desensitized street view &nbsp;for academic use only.</div> -->
+            </div>
+            <div class="cb"></div>
+        </div>
+    </section>
+    <div class="protocol-bg" id="protocol"></div>
+    <div class="protocol_container" id="protocol_container">
+    </div>
+    <div class="done_load"></div>
+    <script type="text/javascript" src="/js/inpainting.js"></script>
+
+    <link rel="import" href="/common/footer.html?__inline">
+</body>
+
+</html>

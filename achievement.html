@@ -1,0 +1,494 @@
+<!-- htmlcs-disable  -->
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="ie"><![endif]-->
+<html lang="en">
+<head>
+    <link rel="import" href="/common/meta.html?__inline">
+    <link rel="import" href="/common/css.html?__inline">
+    <link rel="import" href="/common/js.html?__inline">
+    <link rel="stylesheet" type="text/css" href="common/bootstrap/bootstrap.css">
+
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 750px)" href="css/achievement/index.css">
+    <link rel="stylesheet" type="text/css" media="screen and (max-width: 750px)" href="css/achievement/m-index.css">
+</head>
+
+<body>
+    <link rel="import" href="common/header.html?__inline">
+
+    <section class="main-wrapper">
+        <div class="main">
+            <div class="left-content-wrapper achievement">
+
+                <div class="left-content-item">
+                    <label for="current_name"><h5>Name</h5></label>
+                    <div class="input-group mb-3">
+                        <input type="text" readonly class="form-control-plaintext" id="current_name" value="">
+                    </div>
+                    <label for="current_email"><h5>Email</h5></label>
+                    <div class="input-group mb-3">
+                        <input type="text" readonly class="form-control-plaintext" id="current_email" value="">
+                    </div>
+                    <label for="current_org"><h5>Organization</h5></label>
+                    <div class="input-group mb-3">
+                        <input type="text" readonly class="form-control-plaintext" id="current_org" value="">
+                    </div>
+                    <label><h5>Submission history</h5></label>
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item-task">
+                            <a class="nav-link active" for="#scene" href="javascript:void(0);">Scene Parsing</a>
+                        </li>
+                        <li class="nav-item-task">
+                            <a class="nav-link sleep" for="#lane" href="javascript:void(0);">Lane Segmentation</a>
+                        </li>
+                        <li class="nav-item-task">
+                            <a class="nav-link sleep" for="#car" href="javascript:void(0);">Car Instance</a>
+                        </li>
+                        <li class="nav-item-task">
+                            <a class="nav-link sleep" for="#self" href="javascript:void(0);">Localization</a>
+                        </li>
+                        <li class="nav-item-task">
+                            <a class="nav-link sleep" for="#trajectory" href="javascript:void(0);">Trajectory</a>
+                        </li>
+                        <li class="nav-item-task">
+                            <a class="nav-link sleep" for="#detection" href="javascript:void(0);">Detection</a>
+                        </li>
+                        <li class="nav-item-task">
+                            <a class="nav-link sleep" for="#tracking" href="javascript:void(0);">Tracking</a>
+                        </li>
+                        <li class="nav-item-task">
+                            <a class="nav-link sleep" for="#stereo" href="javascript:void(0);">Stereo</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="left-content-item">
+                    <div class="schedule-wrapper" id="scene">
+                        <div class="rank-table-wrapper">
+                            <div class="rank-table global-rank">
+                                <div class="rank-head">
+                                    <div class="rank-head-tr">
+                                        <div class="rank-th rank-th-lane detection">Rank</div>
+                                        <div class="rank-th rank-th-lane detection">Team Name</div>
+                                        <div class="rank-th rank-th-lane detection">Date</div>
+                                        <div class="rank-th rank-th-lane detection">Method</div>
+                                        <div class="rank-th rank-th-lane detection">Score</div>
+                                        <!-- <div class="rank-th rank-th-lane detection">Public</div> -->
+                                    </div>
+                                </div>
+                                <div class="rank-table-body scene-body">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="schedule-wrapper none-display" id="lane">
+                        <div class="rank-table-wrapper">
+                            <div class="rank-table global-rank">
+                                <div class="rank-head">
+                                    <div class="rank-head-tr">
+                                        <div class="rank-th rank-th-lane">
+                                            Rank
+                                        </div>
+                                        <div class="rank-th rank-th-lane">
+                                            Name
+                                        </div>
+                                        <div class="rank-th rank-th-lane">
+                                            Time
+                                        </div>
+                                        <div class="rank-th rank-th-lane">
+                                            Method
+                                        </div>
+                                        <div class="rank-th rank-th-lane">
+                                            Mean Iou
+                                        </div>
+                                        <!-- <div class="rank-th rank-th-lane">
+                                            Public
+                                        </div> -->
+                                    </div>
+                                </div>
+
+                                <div class="rank-table-body lane-body">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="schedule-wrapper none-display" id="car">
+                        <div class="rank-table-wrapper">
+                            <div class="rank-table global-rank">
+                                <div class="rank-head">
+                                    <div class="rank-head-tr">
+                                        <div class="rank-th rank-th-lane">
+                                            Rank
+                                        </div>
+                                        <div class="rank-th rank-th-lane">
+                                            Name
+                                        </div>
+                                        <div class="rank-th rank-th-lane">
+                                            Time
+                                        </div>
+                                        <div class="rank-th rank-th-lane">
+                                            Method
+                                        </div>
+                                        <div class="rank-th rank-th-lane">
+                                            AP
+                                        </div>
+                                        <!-- <div class="rank-th rank-th-lane">
+                                            Public
+                                        </div> -->
+                                    </div>
+                                </div>
+
+                                <div class="rank-table-body car-body">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="schedule-wrapper none-display" id="self">
+                        <div class="rank-table-wrapper">
+                            <div class="rank-table global-rank">
+                                <div class="rank-head">
+                                    <div class="rank-head-tr">
+                                        <div class="rank-th rank-th-lane">
+                                            Rank
+                                        </div>
+                                        <div class="rank-th rank-th-lane">
+                                            Name
+                                        </div>
+                                        <div class="rank-th rank-th-lane">
+                                            Time
+                                        </div>
+                                        <div class="rank-th rank-th-lane">
+                                            Method
+                                        </div>
+                                        <div class="rank-th rank-th-lane">
+                                            Mean
+                                        </div>
+                                        <!-- <div class="rank-th rank-th-lane">
+                                            Public
+                                        </div> -->
+                                    </div>
+                                </div>
+
+                                <div class="rank-table-body self-body">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="schedule-wrapper none-display" id="trajectory">
+                        <div class="rank-table-wrapper">
+                            <div class="rank-table global-rank">
+                                <div class="rank-head">
+                                    <div class="rank-head-tr">
+                                        <div class="rank-th rank-th-lane detection">Rank</div>
+                                        <div class="rank-th rank-th-lane detection">Team Name</div>
+                                        <div class="rank-th rank-th-lane detection">Date</div>
+                                        <div class="rank-th rank-th-lane detection">Method</div>
+                                        <div class="rank-th rank-th-lane detection">WSADE</div>
+                                        <!-- <div class="rank-th rank-th-lane detection">Public</div> -->
+                                    </div>
+                                </div>
+                                <div class="rank-table-body trajectory-body">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="schedule-wrapper none-display" id="detection">
+                            <div class="rank-table-wrapper">
+                                <div class="rank-table global-rank">
+                                    <div class="rank-head">
+                                        <div class="rank-head-tr">
+                                            <div class="rank-th rank-th-lane detection">Rank</div>
+                                            <div class="rank-th rank-th-lane detection">Team Name</div>
+                                            <div class="rank-th rank-th-lane detection">Date</div>
+                                            <div class="rank-th rank-th-lane detection">Method</div>
+                                            <div class="rank-th rank-th-lane detection">mAP</div>
+                                            <!-- <div class="rank-th rank-th-lane detection">Public</div> -->
+                                        </div>
+                                    </div>
+
+                                    <div class="rank-table-body detection-body">
+
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="schedule-wrapper none-display" id="tracking">
+                    <div class="rank-table-wrapper">
+                        <div class="rank-table global-rank">
+                            <div class="rank-head">
+                                <div class="rank-head-tr">
+                                    <div class="rank-th rank-th-lane detection">Rank</div>
+                                    <div class="rank-th rank-th-lane detection">Team Name</div>
+                                    <div class="rank-th rank-th-lane detection">Date</div>
+                                    <div class="rank-th rank-th-lane detection">Method</div>
+                                    <div class="rank-th rank-th-lane detection">MOTAm</div>
+                                    <!-- <div class="rank-th rank-th-lane detection">Public</div> -->
+                                </div>
+                            </div>
+
+                            <div class="rank-table-body tracking-body">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="schedule-wrapper none-display" id="stereo">
+                    <div class="rank-table-wrapper">
+                        <div class="rank-table global-rank">
+                            <div class="rank-head">
+                                <div class="rank-head-tr">
+                                    <div class="rank-th rank-th-lane detection">Rank</div>
+                                    <div class="rank-th rank-th-lane detection">Team Name</div>
+                                    <div class="rank-th rank-th-lane detection">Date</div>
+                                    <div class="rank-th rank-th-lane detection">Method</div>
+                                    <div class="rank-th rank-th-lane detection">D1_all</div>
+                                    <!-- <div class="rank-th rank-th-lane detection">Public</div> -->
+                                </div>
+                            </div>
+
+                            <div class="rank-table-body stereo-body">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="public" tabindex="-1" role="dialog" aria-labelledby="publicLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="publicLabel">Confirm Dialog</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body" id="publicBody">
+
+                            </div>
+                            <div class="modal-body" id="publicError">
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" id="confirmPublic">Yes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <link rel="import" href="common/footer.html?__inline">
+</body>
+<script type="text/javascript">
+    var arrConfirmDailog = ['Are you sure to public this achievement?", "Are you sure to cancel this achievement to public?'];
+    var arrPublic = ['public', 'no public'];
+    var setResult=function(result_raw) {
+    var result=JSON.parse(result_raw.responseText.substring("groupByTask".length));
+        if (result.status === 0) {
+            $('#current_name').val(result.data.name);
+            $('#current_email').val(result.data.email);
+            $('#current_org').val(result.data.organization);
+            var scene = result.data.result.scene;
+            var laneSegmentation = result.data.result.laneSegmentation;
+            var carInstance      = result.data.result.carInstance;
+            var selfLocalization = result.data.result.selfLocalization;
+            var trajectory = result.data.result.trajectory;
+            var detection = result.data.result.detection;
+            var tracking = result.data.result.tracking;
+            var stereo = result.data.result.stereo;
+
+            $.each(scene, function (c, sceneAchievement) {
+                if (sceneAchievement.result) {
+                    var iou = $.parseJSON(sceneAchievement.result);
+                    var score = iou.score;
+                }
+                var selfTrH = '<div class="rank-tr" id="car-' + sceneAchievement.id + '">';
+                if (sceneAchievement.status === "3") {
+                    var selfTr  = '<div class="rank-td rank-td-lane-small">' + sceneAchievement.rank + '</div>' + '<div class="rank-td rank-td-lane">' + sceneAchievement.team_name + '</div>' + '<div class="rank-td rank-td-lane">' + sceneAchievement.created_at + '</div>' + '<div class="rank-td rank-td-lane">' + sceneAchievement.method_name + '</div>' + '<div class="rank-td rank-td-lane">' + score + '</div>';
+                }
+                if (sceneAchievement.status === "0" || sceneAchievement.status === "2") {
+                    var selfTr  = '<div class="rank-td rank-td-lane-small">-</div>' + '<div class="rank-td rank-td-lane">' + sceneAchievement.team_name + '</div>' + '<div class="rank-td rank-td-lane">' + sceneAchievement.created_at + '</div>' + '<div class="rank-td rank-td-lane">' + sceneAchievement.method_name + '</div>' + '<div class="rank-td rank-td-lane">-</div>';
+                }
+                if (sceneAchievement.status === "1") {
+                    var selfTr  = '<div class="rank-td rank-td-lane-small fail-text">fail</div>' + '<div class="rank-td rank-td-lane">' + sceneAchievement.team_name + '</div>' + '<div class="rank-td rank-td-lane">' + sceneAchievement.created_at + '</div>' + '<div class="rank-td rank-td-lane">' + sceneAchievement.method_name + '</div>' + '<div class="rank-td rank-td-lane fail-text">fail</div>';
+                }
+                var selfTrT = '</div>';
+                var selfHtml = selfTrH + selfTr + selfTrT;
+                $(".scene-body").append(selfHtml);
+            });
+            $.each(laneSegmentation, function (l, lanAchievement) {
+                if (lanAchievement.result) {
+                    var iou = $.parseJSON(lanAchievement.result);
+                    var score = iou.score;
+                }
+                var lanTrH = '<div class="rank-tr" id="lan-' + lanAchievement.id + '">';
+                if (lanAchievement.status === "3") {
+                    var lanTr  = '<div class="rank-td rank-td-lane-small">' + lanAchievement.rank + '</div>' + '<div class="rank-td rank-td-lane">' + lanAchievement.team_name + '</div>' + '<div class="rank-td rank-td-lane">' + lanAchievement.created_at + '</div>' + '<div class="rank-td rank-td-lane">' + lanAchievement.method_name + '</div>' + '<div class="rank-td rank-td-lane">' + score + '</div>';
+                }
+                if (lanAchievement.status === "0" || lanAchievement.status === "2") {
+                    var lanTr  = '<div class="rank-td rank-td-lane-small">-</div>' + '<div class="rank-td rank-td-lane">' + lanAchievement.team_name + '</div>' + '<div class="rank-td rank-td-lane">' + lanAchievement.created_at + '</div>' + '<div class="rank-td rank-td-lane">' + lanAchievement.method_name + '</div>' + '<div class="rank-td rank-td-lane">-</div>';
+                }
+                if (lanAchievement.status === "1") {
+                    var lanTr  = '<div class="rank-td rank-td-lane-small fail-text">fail</div>' + '<div class="rank-td rank-td-lane">' + lanAchievement.team_name + '</div>' + '<div class="rank-td rank-td-lane">' + lanAchievement.created_at + '</div>' + '<div class="rank-td rank-td-lane">' + lanAchievement.method_name + '</div>' + '<div class="rank-td rank-td-lane fail-text">fail</div>';
+                }
+                var lanTrT = '</div>';
+
+                var lanHtml = lanTrH + lanTr + lanTrT;
+                $(".lane-body").append(lanHtml);
+            });
+            $.each(carInstance, function (c, carAchievement) {
+                if (carAchievement.result) {
+                    var iou = $.parseJSON(carAchievement.result);
+                    var score = iou.score;
+                }
+
+                var carTrH = '<div class="rank-tr" id="car-' + carAchievement.id + '">';
+                if (carAchievement.status === '3') {
+                    var carTr  = '<div class="rank-td rank-td-lane-small">' + carAchievement.rank + '</div>' + '<div class="rank-td rank-td-lane">' + carAchievement.team_name + '</div>' + '<div class="rank-td rank-td-lane">' + carAchievement.created_at + '</div>' + '<div class="rank-td rank-td-lane">' + carAchievement.method_name + '</div>' + '<div class="rank-td rank-td-lane">' + score + '</div>';
+                }
+                if (carAchievement.status === "0" || carAchievement.status === "2") {
+                    var carTr  = '<div class="rank-td rank-td-lane-small">-</div>' + '<div class="rank-td rank-td-lane">' + carAchievement.team_name + '</div>' + '<div class="rank-td rank-td-lane">' + carAchievement.created_at + '</div>' + '<div class="rank-td rank-td-lane">' + carAchievement.method_name + '</div>' + '<div class="rank-td rank-td-lane">-</div>';
+                }
+                if (carAchievement.status === "1") {
+                    var carTr  = '<div class="rank-td rank-td-lane-small fail-text">fail</div>' + '<div class="rank-td rank-td-lane">' + carAchievement.team_name + '</div>' + '<div class="rank-td rank-td-lane">' + carAchievement.created_at + '</div>' + '<div class="rank-td rank-td-lane">' + carAchievement.method_name + '</div>' + '<div class="rank-td rank-td-lane fail-text">fail</div>';
+                }
+                var carTrT = '</div>';
+
+                var carHtml = carTrH + carTr + carTrT;
+                $(".car-body").append(carHtml);
+            });
+            $.each(selfLocalization, function (c, selfAchievement) {
+                if (selfAchievement.result) {
+                    var iou = $.parseJSON(selfAchievement.result);
+                    var score = iou.score;
+                }
+
+                var selfTrH = '<div class="rank-tr" id="car-' + selfAchievement.id + '">';
+                if (selfAchievement.status === "3") {
+                    var selfTr  = '<div class="rank-td rank-td-lane-small">' + selfAchievement.rank + '</div>' + '<div class="rank-td rank-td-lane">' + selfAchievement.team_name + '</div>' + '<div class="rank-td rank-td-lane">' + selfAchievement.created_at + '</div>' + '<div class="rank-td rank-td-lane">' + selfAchievement.method_name + '</div>' + '<div class="rank-td rank-td-lane">' + score + '</div>';
+                }
+                if (selfAchievement.status === "0" || selfAchievement.status === "2") {
+                    var selfTr  = '<div class="rank-td rank-td-lane-small">-</div>' + '<div class="rank-td rank-td-lane">' + selfAchievement.team_name + '</div>' + '<div class="rank-td rank-td-lane">' + selfAchievement.created_at + '</div>' + '<div class="rank-td rank-td-lane">' + selfAchievement.method_name + '</div>' + '<div class="rank-td rank-td-lane">-</div>';
+                }
+                if (selfAchievement.status === "1") {
+                    var selfTr  = '<div class="rank-td rank-td-lane-small fail-text">fail</div>' + '<div class="rank-td rank-td-lane">' + selfAchievement.team_name + '</div>' + '<div class="rank-td rank-td-lane">' + selfAchievement.created_at + '</div>' + '<div class="rank-td rank-td-lane">' + selfAchievement.method_name + '</div>' + '<div class="rank-td rank-td-lane fail-text">fail</div>';
+                }
+                var selfTrT = '</div>';
+
+                var selfHtml = selfTrH + selfTr + selfTrT;
+                $(".self-body").append(selfHtml);
+            });
+            $.each(trajectory, function (c, trajectoryAchievement) {
+                if (trajectoryAchievement.result) {
+                    var iou = $.parseJSON(trajectoryAchievement.result);
+                    var score = iou.score;
+                }
+                var carTrH = '<div class="rank-tr" id="car-' + trajectoryAchievement.id + '">';
+                var carTr = null;
+                if (trajectoryAchievement.status === '3') {
+                    carTr  = '<div class="rank-td rank-td-lane-small">' + trajectoryAchievement.rank + '</div>' + '<div class="rank-td rank-td-lane">' + trajectoryAchievement.team_name + '</div>' + '<div class="rank-td rank-td-lane">' + trajectoryAchievement.created_at + '</div>' + '<div class="rank-td rank-td-lane">' + trajectoryAchievement.method_name + '</div>' + '<div class="rank-td rank-td-lane">' + score + '</div>';
+                }
+                if (trajectoryAchievement.status === '0' || trajectoryAchievement.status === '2') {
+                    carTr  = '<div class="rank-td rank-td-lane-small">-</div>' + '<div class="rank-td rank-td-lane">' + trajectoryAchievement.team_name + '</div>' + '<div class="rank-td rank-td-lane">' + trajectoryAchievement.created_at + '</div>' + '<div class="rank-td rank-td-lane">' + trajectoryAchievement.method_name + '</div>' + '<div class="rank-td rank-td-lane">-</div>';
+                }
+                if (trajectoryAchievement.status === '1') {
+                    carTr  = '<div class="rank-td rank-td-lane-small fail-text">fail</div>' + '<div class="rank-td rank-td-lane">' + trajectoryAchievement.team_name + '</div>' + '<div class="rank-td rank-td-lane">' + trajectoryAchievement.created_at + '</div>' + '<div class="rank-td rank-td-lane">' + trajectoryAchievement.method_name + '</div>' + '<div class="rank-td rank-td-lane fail-text">fail</div>';
+                }
+                var carTrT = '</div>';
+                var carHtml = carTrH + carTr + carTrT;
+                $('.trajectory-body').append(carHtml);
+            });
+            $.each(detection, function (c, detectionAchievement) {
+                if (detectionAchievement.result) {
+                    var iou = $.parseJSON(detectionAchievement.result);
+                    var score = iou.score;
+                }
+                var carTrH = '<div class="rank-tr" id="car-' + detectionAchievement.id + '">';
+                var carTr = null;
+                if (detectionAchievement.status === '3') {
+                    carTr = '<div class="rank-td rank-td-lane-small">' + detectionAchievement.rank + '</div>' + '<div class="rank-td rank-td-lane">' + detectionAchievement.team_name + '</div>' + '<div class="rank-td rank-td-lane">' + detectionAchievement.created_at + '</div>' + '<div class="rank-td rank-td-lane">' + detectionAchievement.method_name + '</div>' + '<div class="rank-td rank-td-lane">' + score + '</div>';
+                }
+                if (detectionAchievement.status === '0' || detectionAchievement.status === '2') {
+                    carTr = '<div class="rank-td rank-td-lane">' + detectionAchievement.rank + '</div>' + '<div class="rank-td rank-td-lane">' + detectionAchievement.team_name + '</div>' + '<div class="rank-td rank-td-lane">' + detectionAchievement.created_at + '</div>' + '<div class="rank-td rank-td-lane">' + detectionAchievement.method_name + '</div>' + '<div class="rank-td rank-td-lane">-</div>';
+                }
+                if (detectionAchievement.status === '1') {
+                    carTr = '<div class="rank-td rank-td-lane">' + detectionAchievement.rank + '</div>' + '<div class="rank-td rank-td-lane">' + detectionAchievement.team_name + '</div>' + '<div class="rank-td rank-td-lane">' + detectionAchievement.created_at + '</div>' + '<div class="rank-td rank-td-lane">' + detectionAchievement.method_name + '</div>' + '<div class="rank-td rank-td-lane">fail</div>';
+                }
+                var carTrT = '</div>';
+                var carHtml = carTrH + carTr + carTrT;
+                $('.detection-body').append(carHtml);
+            });
+            $.each(tracking, function (c, trackingAchievement) {
+                if (trackingAchievement.result) {
+                    var iou = $.parseJSON(trackingAchievement.result);
+                    var score = iou.score;
+                }
+                var carTrH = '<div class="rank-tr" id="car-' + trackingAchievement.id + '">';
+                var carTr = null;
+                if (trackingAchievement.status === '3') {
+                    var carTr  = '<div class="rank-td rank-td-lane-small">' + trackingAchievement.rank + '</div>' + '<div class="rank-td rank-td-lane">' + trackingAchievement.team_name + '</div>' + '<div class="rank-td rank-td-lane">' + trackingAchievement.created_at + '</div>' + '<div class="rank-td rank-td-lane">' + trackingAchievement.method_name + '</div>' + '<div class="rank-td rank-td-lane">' + score + '</div>';
+                }
+                if (trackingAchievement.status === '0' || trackingAchievement.status === '2') {
+                    var carTr  = '<div class="rank-td rank-td-lane-small">-</div>' + '<div class="rank-td rank-td-lane">' + trackingAchievement.team_name + '</div>' + '<div class="rank-td rank-td-lane">' + trackingAchievement.created_at + '</div>' + '<div class="rank-td rank-td-lane">' + trackingAchievement.method_name + '</div>' + '<div class="rank-td rank-td-lane">-</div>';
+                }
+                if (trackingAchievement.status === '1') {
+                    var carTr  = '<div class="rank-td rank-td-lane-small fail-text">fail</div>' + '<div class="rank-td rank-td-lane">' + trackingAchievement.team_name + '</div>' + '<div class="rank-td rank-td-lane">' + trackingAchievement.created_at + '</div>' + '<div class="rank-td rank-td-lane">' + trackingAchievement.method_name + '</div>' + '<div class="rank-td rank-td-lane fail-text">fail</div>';
+                }
+                var carTrT = '</div>';
+                var carHtml = carTrH + carTr + carTrT;
+                $('.tracking-body').append(carHtml);
+            });
+            $.each(stereo, function (c, stereoAchievement) {
+                if (stereoAchievement.result) {
+                    var iou = $.parseJSON(stereoAchievement.result);
+                    var score = iou.score;
+                }
+                var carTrH = '<div class="rank-tr" id="car-' + stereoAchievement.id + '">';
+                var carTr = null;
+                if (stereoAchievement.status === '3') {
+                    var carTr  = '<div class="rank-td rank-td-lane-small">' + stereoAchievement.rank + '</div>' + '<div class="rank-td rank-td-lane">' + stereoAchievement.team_name + '</div>' + '<div class="rank-td rank-td-lane">' + stereoAchievement.created_at + '</div>' + '<div class="rank-td rank-td-lane">' + stereoAchievement.method_name + '</div>' + '<div class="rank-td rank-td-lane">' + score + '</div>';
+                }
+                if (stereoAchievement.status === '0' || stereoAchievement.status === '2') {
+                    var carTr  = '<div class="rank-td rank-td-lane-small">-</div>' + '<div class="rank-td rank-td-lane">' + stereoAchievement.team_name + '</div>' + '<div class="rank-td rank-td-lane">' + stereoAchievement.created_at + '</div>' + '<div class="rank-td rank-td-lane">' + stereoAchievement.method_name + '</div>' + '<div class="rank-td rank-td-lane">-</div>';
+                }
+                if (stereoAchievement.status === '1') {
+                    var carTr  = '<div class="rank-td rank-td-lane-small fail-text">fail</div>' + '<div class="rank-td rank-td-lane">' + stereoAchievement.team_name + '</div>' + '<div class="rank-td rank-td-lane">' + stereoAchievement.created_at + '</div>' + '<div class="rank-td rank-td-lane">' + stereoAchievement.method_name + '</div>' + '<div class="rank-td rank-td-lane fail-text">fail</div>';
+                }
+                var carTrT = '</div>';
+                var carHtml = carTrH + carTr + carTrT;
+                $('.stereo-body').append(carHtml);
+            });
+        }
+        if (result.status === 400) {
+            window.location.href = '/login.html';
+        }
+
+
+    }
+
+    $.getJSON({url:'/server/eccv/report',error:setResult,success:setResult});
+    $('.nav-link').click(function () {
+        var currentActiveTable = $('.nav-link.active').attr('for');
+        var newActiveTable     = $(this).attr('for');
+        $(currentActiveTable).addClass('none-display');
+        $('.nav-link.active').removeClass('active').addClass('sleep');
+
+        if ($(this).hasClass('sleep')) {
+            $(this).removeClass('sleep');
+        }
+        if (!$(this).hasClass('active')) {
+            $(this).addClass('active');
+        }
+        $(newActiveTable).removeClass('none-display');
+    });
+</script>
+
+</html>

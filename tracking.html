@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<!-- htmlcs-disable -->
+<!--[if lt IE 9]><html class="ie"><![endif]-->
+<html lang="en">
+
+<head>
+    <link rel="import" href="/common/meta.html?__inline">
+    <link rel="import" href="/common/css.html?__inline">
+    <link rel="import" href="/common/js.html?__inline">
+
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 750px)" href="/css/scene/github.css">
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 750px)" href="/css/scene/scene.css">
+    <style type="text/css">
+    .scene-body .content .github_table {
+        border: unset;
+        height: unset;
+    }
+
+    .markdown-body p,
+    .markdown-body blockquote,
+    .markdown-body ul,
+    .markdown-body ol,
+    .markdown-body dl,
+    .markdown-body table,
+    .markdown-body pre {
+        font-size: 14px;
+        color: #666;
+    }
+    .markdown-body {
+        font-family: PingFangSC-Regular;
+    }
+    .eccv a.submit-achievement {
+        border: #006aff 1px solid;
+        color: #006aff;
+        cursor: pointer;
+    }
+    .markdown-body .title-1 {
+        font-size: 20px;
+        color: #333;
+    }
+
+    .markdown-body .mt60 {
+        margin-top: 60px !important;
+    }
+
+    .scene-body .content {
+        padding-left: 25px;
+    }
+
+    .tip-top {
+        word-wrap: normal;
+    }
+    .markdown-body .publication-table {
+        overflow: visible;
+        display: table;
+    }
+    .word-1.indent {
+        padding-left: 1.2em;
+    }
+    </style>
+</head>
+
+<body>
+    <link rel="import" href="/common/header.html?__inline">
+
+    <section class="banner main-wrapper scene-banner" id="banner-container">
+    </section>
+    <section class="main-wrapper">
+        <div class="main scene-body" id="scene-container">
+            <div class="menu fl"></div>
+            <div class="content fl">
+                <p class="title-1 mt60" id="to_introduction_href">1 · Introduction</p>
+                <p class="word-1 mt20" id="to_collection_href">
+                    Our 3D Lidar object detection and tracking dataset consists of LiDAR scanned point clouds with high quality annotation. It is collected under various lighting conditions and traffic densities in Beijing, China. More specifically, it contains highly complicated traffic flows mixed with vehicles, cyclists, and pedestrians.                 </p>
+                </p>
+                <div class="fl mt20 demo">
+                    <img src="./public/img/scene/intro.gif" width="500px">
+                </div>
+                <div class="cb"></div>
+                <p class="title-1 mt60" id="to_data_href">2 · Data Download</p>
+                <p class="word-1 mt20" id="to_collection_href">
+                    The 3D Lidar object detection and tracking benchmark consists of about 53min training sequences and 50min testing sequences. The data is captured at 10 frames per second and labeled at 2 frames per second. We provide all the raw data and labeled data.
+                </p>
+                <div class="title-2 mt40">
+                    Training data
+                </div>
+                <div class="down_list mt20 clearfix">
+                    <a class="down_btn fl mr10" value="detection_train_pcd_1.zip">detection_train_pcd_1.zip</a>
+                    <a class="down_btn fl mr10" value="detection_train_pcd_2.zip">detection_train_pcd_2.zip</a>
+                    <a class="down_btn fl mr10" value="detection_train_pcd_3.zip">detection_train_pcd_3.zip</a>
+                </div>
+                <div class="down_list mt20 clearfix">
+                    <a class="down_btn fl mr10" value="detection_train_bin_1.zip">detection_train_bin_1.zip</a>
+                    <a class="down_btn fl mr10" value="detection_train_bin_2.zip">detection_train_bin_2.zip</a>
+                    <a class="down_btn fl mr10" value="detection_train_bin_3.zip">detection_train_bin_3.zip</a>
+                </div>
+                <!-- <div class="down_list mt20 clearfix">
+                    <a class="down_btn fl mr10" value="tracking_train_pcd_1.zip">tracking_train_pcd_1.zip</a>
+                    <a class="down_btn fl mr10" value="tracking_train_pcd_2.zip">tracking_train_pcd_2.zip</a>
+                    <a class="down_btn fl mr10" value="tracking_train_pcd_3.zip">tracking_train_pcd_3.zip</a>
+                </div>
+                <div class="down_list mt20 clearfix">
+                    <a class="down_btn fl mr10" value="tracking_train_bin_1.zip">tracking_train_bin_1.zip</a>
+                    <a class="down_btn fl mr10" value="tracking_train_bin_2.zip">tracking_train_bin_2.zip</a>
+                    <a class="down_btn fl mr10" value="tracking_train_bin_3.zip">tracking_train_bin_3.zip</a>
+                </div> -->
+
+                <div class="down_list mt20 clearfix">
+                    <a class="down_btn fl mr10" value="detection_train_label.zip"> detection_train_label.zip</a>
+                    <a class="down_btn fl mr10" value="tracking_train_label.zip"> tracking_train_label.zip</a>
+                    <a class="down_btn fl mr10" value="tracking_train_pose.zip"> tracking_train_pose.zip</a>
+                </div>
+                <!-- <div class="down_list mt20 clearfix">
+                    <a class="down_btn fl mr10" value="detection_train_label_kitti.zip"> detection_train_label_kitti.zip</a>
+
+                </div> -->
+
+                <div class="title-2 mt40">
+                    Testing data
+                </div>
+                <div class="down_list mt20 clearfix">
+                    <a class="down_btn fl mr10" value="detection_test_pcd_1.zip">detection_test_pcd_1.zip</a>
+                    <a class="down_btn fl mr10" value="detection_test_pcd_2.zip">detection_test_pcd_2.zip</a>
+                    <a class="down_btn fl mr10" value="detection_test_pcd_3.zip">detection_test_pcd_3.zip</a>
+                </div>
+                <div class="down_list mt20 clearfix">
+                    <a class="down_btn fl mr10" value="detection_test_bin_1.zip">detection_test_bin_1.zip</a>
+                    <a class="down_btn fl mr10" value="detection_test_bin_2.zip">detection_test_bin_2.zip</a>
+                    <a class="down_btn fl mr10" value="detection_test_bin_3.zip">detection_test_bin_3.zip</a>
+                </div>
+                <!-- <div class="down_list mt20 clearfix">
+                    <a class="down_btn fl mr10" value="tracking_test_pcd_1.zip">tracking_test_pcd_1.zip</a>
+                    <a class="down_btn fl mr10" value="tracking_test_pcd_2.zip">tracking_test_pcd_2.zip</a>
+                    <a class="down_btn fl mr10" value="tracking_test_pcd_3.zip">tracking_test_pcd_3.zip</a>
+                </div>
+                <div class="down_list mt20 clearfix">
+                    <a class="down_btn fl mr10" value="tracking_test_bin_1.zip">tracking_test_bin_1.zip</a>
+                    <a class="down_btn fl mr10" value="tracking_test_bin_2.zip">tracking_test_bin_2.zip</a>
+                    <a class="down_btn fl mr10" value="tracking_test_bin_3.zip">tracking_test_bin_3.zip</a>
+                </div> -->
+
+                <div class="down_list mt20 clearfix">
+                    <a class="down_btn fl mr10" value="tracking_test_pose.zip">tracking_test_pose.zip</a>
+                </div>
+
+                <div class="cb"></div>
+                <p class="title-1 mt60" id="to_dataset_href">3 · Data Structure</p>
+
+                <p class="word-1 mt10">The folder structure of the 3D Lidar object detection and tracking is as follows:</p>
+                <p class="word-1 mt10">
+                    1) train.zip : training data for 3D Lidar object detection/ tracking. Lidar data is in PCD (Point Cloud Data) and bin file format in 2hz.
+                </p>
+                <p class="word-1 mt10">
+                    2) detection/ tracking_train_label.zip: labelled data for 3D Lidar object detection and tracking.<br>
+                    ∙ Each file is a 1min sequence with 2fps.<br>
+                    ∙ Each line in every file contains frame_id, object_id, object_type, position_x, position_y, position_z, object_length, object_width, object_height, heading. object_id is only for tracking.<br>
+                    ∙ For object_type, 1 for small vehicles, 2 for big vehicles, 3 for pedestrian, 4 for motorcyclist and bicyclist, 5 for traffic cones and 6 for others. During the evaluation in this challenge, we treat the first two types, small vehicle and big vehicle, as one type (vehicle).<br>
+                    ∙ Position is in the relative coordinate. The unit for the position and bounding box is meter.<br>
+                    ∙ The heading value is the steering radian with respect to the direction of the object.
+                </p>
+                <p class="word-1 mt10">
+                    3) test.zip: testing data for 3D Lidar object detection and tracking.
+                </p>
+                <p class="word-1 mt10">
+                    4) pose.zip: lidar pose. Data in the format of: frame_index, lidar_time, position_(x, y, z), quaternion_(x, y, z ,w). This positon is in the absolute coordinate, please use this position for tracking task.
+                </p>
+                <p class="title-1 mt60" id="to_evaluation_href">4 · Evaluation</p>
+                <p class="word-1 mt20">
+                    The evaluation scripts are released on github <a href="https://github.com/sibozhang/dataset-api/tree/master/3d_detection_tracking">here</a>.
+                </p>
+                <p class="word-1 mt20">
+                    During the evaluation in this challenge, We do evaluation just for Car (type 1 small vehicles and type 2 big vehicles), Pedestrian (type 3) and Cyclist (type 4). However, please keep the original type IDs during the training and prediction, we will merge the first two types in our evaluation scripts.
+                </p>
+                <p class="title-1 mt60" id="to_metric_href">5 · Metric formula</p>
+                <p class="word-1 mt20">
+                    1)	3D detection
+                </p>
+                <p class="word-1 mt20">
+                  We use similar metric defined in KITTI[2]. The goal in the 3D object detection task is to train object detectors for the classes 'vehicle', 'pedestrian', and 'bicyclist'. The object detectors must provide the 3D bounding box (3D dimensions and 3D position) and the detection score/confidence. We also note that not all objects in the point clouds have been labeled. We evaluate 3D object detection performance using mean average precision (mAP), based on IoU. Evaluation criterion similar to the 2D object detection benchmark (using 3D bounding box overlap). The final metric will be the mean of mAP of vehicles (
+                  <img class="spce-icon" src="public/img/scene/tracking_img/mapv.png" align="middle" width="24pt" height="14.15524440000002pt/" style="max-width:100%">
+                  ), pedestrian(
+                  <img class="spce-icon" src="public/img/scene/tracking_img/mapp.png" align="middle" width="24pt" height="14.15524440000002pt/" style="max-width:100%">
+                  ) and bicyclist(
+                  <img class="spce-icon" src="public/img/scene/tracking_img/mapb.png" align="middle" width="24pt" height="14.15524440000002pt/" style="max-width:100%">
+                  ). We set IoU threshold for each type as 0.7 (Car), 0.5 (Pedestrian), 0.5(Cyclist).
+                </p>
+                <!-- <img src="public/img/scene/tracking_img/formula.png" align="middle" width="300px" style="max-width:100%"> -->
+                <p class="word-1 mt40">
+                    2)	3D tracking
+                </p>
+                <p class="word-1 mt20">
+                    Follow the CLEARMOT [1], we use the multiple object tracking accuracy (MOTA) as the evaluation criterion.
+                </p>
+                <img src="public/img/scene/tracking1.png" align="middle" width="150px" style="max-width:100%">
+                <p class="word-1 mt20">
+                    Where <img class="spce-icon" src="public/img/scene/tracking_img/mt.png" align="middle" width="12pt" height="14.15524440000002pt/" style="max-width:100%">,
+                    <img class="spce-icon" src="public/img/scene/tracking_img/fpt.png" align="middle" width="18pt" height="14.15524440000002pt/" style="max-width:100%">,
+                    <img class="spce-icon" src="public/img/scene/tracking_img/mmet.png" align="middle" width="24pt" height="14.15524440000002pt/" style="max-width:100%">,
+                    and
+                    <img class="spce-icon" src="public/img/scene/tracking_img/gt.png" align="middle" width="12.067218899999991pt" height="14.15524440000002pt/" style="max-width:100%">
+                    are the number of misses, of false positives, of mismatches, and of objects present respectively, for time
+                    <img class="spce-icon" src="public/img/scene/tracking_img/t.png" align="middle" width="12.067218899999991pt" height="14.15524440000002pt/" style="max-width:100%">.
+                </p>
+                <p class="word-1 mt20">
+                    For object
+                    <img class="spce-icon" src="public/img/scene/tracking_img/oi.png" align="middle" width="12.067218899999991pt" style="max-width:100%">
+                    and tracker hypothese
+                    <img class="spce-icon" src="public/img/scene/tracking_img/hj.png" align="middle" width="12.067218899999991pt" style="max-width:100%">,
+                    we use the intersection-over-union (
+                    IoU
+                    ) threshold to define.
+                </p>
+                <img src="public/img/scene/tracking2.png" align="middle" width="150px" style="max-width:100%">
+                <p class="word-1 mt20">
+                    where
+                    <img class="spce-icon" src="public/img/scene/tracking_img/up_Oi.png" align="middle" width="12.067218899999991pt" style="max-width:100%">
+                    and
+                    <img class="spce-icon" src="public/img/scene/tracking_img/up_Hj.png" align="middle" width="12.067218899999991pt" style="max-width:100%">
+                    are the corresponding 3D bounding boxes for
+                    <img class="spce-icon" src="public/img/scene/tracking_img/oi.png" align="middle"width="12.067218899999991pt" style="max-width:100%">
+                    and
+                    <img class="spce-icon" src="public/img/scene/tracking_img/hj.png" align="middle" width="12.067218899999991pt" style="max-width:100%">.
+                    We set IoU threshold for each type as 0.5. If IoU(
+                    <img class="spce-icon" src="public/img/scene/tracking_img/oi.png" align="middle" width="12.067218899999991pt" style="max-width:100%"> ,
+                    <img class="spce-icon" src="public/img/scene/tracking_img/hj.png" align="middle" width="12.067218899999991pt" style="max-width:100%">
+                    ) is less than 0.5, we think the tracker has missed the object.<br>
+                    The final score will be the mean MOTA of Car(
+                  <img class="spce-icon" src="public/img/scene/tracking_img/motav.png" align="middle" width="24pt" height="14.15524440000002pt/" style="max-width:100%">
+                  ), Pedestrian(
+                  <img class="spce-icon" src="public/img/scene/tracking_img/motap.png" align="middle" width="24pt" height="14.15524440000002pt/" style="max-width:100%">
+                  ) and Cyclist(
+                  <img class="spce-icon" src="public/img/scene/tracking_img/motab.png" align="middle" width="24pt" height="14.15524440000002pt/" style="max-width:100%">
+                  ).
+                   <!-- is defined as follows:
+                </p>
+                <img src="public/img/scene/tracking_img/eval_formula.png" align="middle" width="300px" style="max-width:100%"> -->
+
+                <p class="title-1 mt60" id="to_rules_href">6 · Rules of ranking</p>
+                <p class="word-1 mt10">
+                    1)	3D detection
+                </p>
+                <p class="word-1 mt10">Result benchmark will be:</p>
+                <table class="github_table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Method</th>
+                            <th align="center">mAP</th>
+                            <th align="center">AP(Car)</th>
+                            <th align="center">AP(Pedestrian)</th>
+                            <th align="center">AP(Cyclist)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>xxx</td>
+                            <td align="center">xx</td>
+                            <td align="center">
+                                xx
+                            </td>
+                            <td align="center">
+                                xx
+                            </td>
+                            <td align="center">
+                                xx
+                            </td>
+                            <td align="center">
+                                xx
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="word-1 mt10">
+                    Our ranking will determined by the mAP.
+                </p>
+                <p class="word-1 mt10">
+                    2)	3D tracking
+                </p>
+                <p class="word-1 mt10">Result benchmark will be:</p>
+                <table class="github_table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Method</th>
+                            <th align="center">MOTA</th>
+                            <th align="center">MOTA(Car)</th>
+                            <th align="center">MOTA(Pedestrian)</th>
+                            <th align="center">MOTA(Cyclist)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>xxx</td>
+                            <td align="center">xx</td>
+                            <td align="center">xx</td>
+                            <td align="center">xx</td>
+                            <td align="center">xx</td>
+                            <td align="center">xx</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="word-1 mt10">Our ranking will be determined by MOTA.</p>
+                <p class="title-1 mt60" id="to_submission_href">7 · Format of submission file</p>
+                <p class="word-1">1) 3D detection</p>
+                <p class="word-1">Please submit one detection_result.zip file. In this zip file, you have one folder named detection_result, under this folder, you have multiple subfolders follow the same name in test_pcd, under each subfolder are result txt files of that sequence:</p>
+                <p class="word-1">detection_result</p>
+                <p class="word-1">├── 9048_2</p>
+                <p class="word-1 ml26">├── ├──   2.txt</p>
+                <p class="word-1 ml26">├── ├──   7.txt</p>
+                <p class="word-1 ml26">...</p>
+                <p class="word-1 ml26">├── ├──   462.txt</p>
+                <p class="word-1 ml26">...</p>
+
+                <p class="word-1">├── 9049_1</p>
+                <p class="word-1 ml26">...</p>
+                <p class="word-1">├── 9063_10</p>
+                <p class="word-1 ml26">...</p>
+                <p class="word-1">
+                    - Each line in every file contains object_type, position_x, position_y, position_z, object_length, object_width, object_height, heading, score. score indicates confidence in
+              detection results.
+                    <br>
+                    - Each file name is frame_id name, which should be same as pcd frame id we provide in test_pcd. Each pcd file should have a corresponding result file. Total test result should be 5400 txt files.
+                    <br>
+                    - Please only keep type 1/2/3/4 in your result file. We do evaluation just for Car (type 1 and 2), Pedestrian (type 3) and Cyclist (type 4).</p>
+                <div class="eccv">
+                    <a class="task-submission-btn submit-achievement submit_achievement">
+                        Participate
+                    </a>
+                    <a class="task-submission-btn leader_board" href="/leader_board.html" target="_Blank">
+                        LeaderBoard
+                    </a>
+                </div>
+                <br/>
+                <p class="word-1">2) 3D tracking</p>
+                <p class="word-1">Please submit one tracking_result.zip file. Folder and subfolders structure and file name are same to detection_result, but we need object_id in file.
+                    <br>
+                    - Each line in every file contains object_id, object_type, position_x, position_y, position_z, object_length, object_width, object_height, heading, score</p>
+                <div class="eccv">
+                    <a class="task-submission-btn submit-achievement submit_achievement">
+                        Participate
+                    </a>
+                    <a class="task-submission-btn leader_board" href="/leader_board.html" target="_Blank">
+                        LeaderBoard
+                    </a>
+                </div>
+                <p class="title-1 mt60" id="to_publication_href">8 · Publication</p>
+                <table class="publication-table" style="width:100%" cellspacing="10" valign="top">
+                    <tr>
+                    <td valign="top" align='left'>
+                    <p>Please cite our paper in your publications if our dataset is used in your research.</p >
+                    <p>TrafficPredict: Trajectory Prediction for Heterogeneous Traffic-Agents [<a href="https://arxiv.org/pdf/1811.02146.pdf"><font color="red">PDF</a></font>]<a href="https://ad-apolloscape.cdn.bcebos.com/TrafficPredict/trafficpredict_bibtex.txt">[BibTex]</a>
+                      <br/>
+                      Yuexin Ma, Xinge Zhu, Sibo Zhang, Ruigang Yang, Wenping Wang, and Dinesh Manocha.<br> <em>AAAI(oral), 2019</em><br><br>
+                    </tr>
+                </table>
+                <p class="title-1 mt60" id="to_reference_href">9 · Reference</p>
+                <p class="word-1 mt20">
+                    [1] K. Bernardin, R. Stiefelhagen: Evaluating Multiple Object Tracking Performance: The CLEAR MOT Metrics. JIVP 2008.
+                </p>
+                <p class="word-1 mt20">
+                    [2]Geiger, Andreas, Philip Lenz, and Raquel Urtasun. "Are we ready for autonomous driving? the kitti vision benchmark suite." CVPR, 2012.
+                </p>
+
+                <div class="cb"></div>
+                <p class="title-1 mt60" id="to_reference_href">Q & A</p>
+                <p class="word-1 mt10">
+                    Q1. Is there corresponding image data included in the dataset?</p><p class="word-1 mt10">
+                    We have not labeled the image data. Current challenge is just based on the Lidar data.</p><p class="word-1 mt10">
+                    Q2. Is there any difference between .pcd file and .bin file?</p><p class="word-1 mt10">
+                    They are just different in format. You can use any of them in your work.</p><p class="word-1 mt10">
+                    Q3. Should I cut the lidar data like processing KITTI dataset?</p><p class="word-1 mt10">
+                    No, you should use all the data.</p><p class="word-1 mt10">
+                    Q4. What's data annotaion rule for different type?</p><p class="word-1 mt10">
+                    annotation is based on lidar point clouds not on actual object size</p><p class="word-1 mt10">
+                    Small vehicles: small cars, SUVs. </p><p class="word-1 mt10">
+                    Large vehicles: Motor vehicles with a height greater than 2 m or a length greater than 6 m. </p><p class="word-1 mt10">
+                    Motorcyclist and Bicyclist: people riding motorcycles, electric cars, tricycles; bicycles (some people riding or pushing).</p><p class="word-1 mt10">
+                    Pedestrians: include people who are carrying luggage, pushing a car (a type of car not covered above), and a person in a wheelchair.</p><p class="word-1 mt10">
+                    Traffic cones : All traffic cones within 60 meters of ego car.
+                </p>
+                <div class="mt60" style="font-size: 18px;text-align: center;">The dataset we released is &nbsp;desensitized street view &nbsp;for academic use only.</div>
+            </div>
+            <div class="cb"></div>
+        </div>
+    </section>
+    <div class="protocol-bg" id="protocol"></div>
+    <div class="protocol_container" id="protocol_container">
+    </div>
+    <div class="done_load"></div>
+    <script type="text/javascript" src="/js/tracking.js"></script>
+
+    <link rel="import" href="/common/footer.html?__inline">
+</body>
+
+</html>

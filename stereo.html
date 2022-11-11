@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<!-- htmlcs-disable -->
+<!--[if lt IE 9]><html class="ie"><![endif]-->
+<html lang="en">
+
+<head>
+    <link rel="import" href="/common/meta.html?__inline">
+    <link rel="import" href="/common/css.html?__inline">
+    <link rel="import" href="/common/js.html?__inline">
+
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 750px)" href="/css/scene/github.css">
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 750px)" href="/css/scene/scene.css">
+    <style type="text/css">
+    .scene-body .content .github_table {
+        border: unset;
+        height: unset;
+    }
+
+    .markdown-body p,
+    .markdown-body blockquote,
+    .markdown-body ul,
+    .markdown-body ol,
+    .markdown-body dl,
+    .markdown-body table,
+    .markdown-body pre {
+        font-size: 14px;
+        color: #666;
+    }
+    .markdown-body {
+        font-family: PingFangSC-Regular;
+    }
+    .eccv a.submit_achievement {
+        border: #006aff 1px solid;
+        color: #006aff;
+        cursor: pointer;
+    }
+    .markdown-body .title-1 {
+        font-size: 20px;
+        color: #333;
+    }
+
+    .markdown-body .mt60 {
+        margin-top: 60px !important;
+    }
+
+    .scene-body .content {
+        padding-left: 25px;
+    }
+
+    .tip-top {
+        word-wrap: normal;
+    }
+    .markdown-body .publication-table {
+        overflow: visible;
+        display: table;
+    }
+    .word-1.indent {
+        padding-left: 1.2em;
+    }
+    .ml40 {
+        margin-left: 40px;
+    }
+    </style>
+</head>
+
+<body>
+    <link rel="import" href="/common/header.html?__inline">
+
+    <section class="banner main-wrapper scene-banner" id="banner-container">
+    </section>
+    <section class="main-wrapper">
+        <div class="main scene-body" id="scene-container">
+            <div class="menu fl"></div>
+            <div class="content fl">
+                <p class="title-1 mt60" id="to_introduction_href">1 · Introduction</p>
+                <p class="word-1 mt40">
+                    The dataset consists 5165 image pairs and corresponding disparity maps, where 4156 image pairs are used for training, and 1009 image pairs are used for testing. The images are extracted from Apollo dataset. Ground truth has been acquired by accumulating 3D point clouds from Lidar and fitting 3D CAD models to individually moving cars (obtained from 3d car instance understanding dataset). The dataset contains varying traffic conditions with heavy occlusion, which are very challenging.
+                </p>
+                <div class="fl mt20 demo">
+                    <!-- <img src="./public/img/scene/intro.gif" width="500px"> -->
+                    <p>
+                        <img src="./public/img/stereo/example_003/dis.png" width="260px">
+                        <img src="./public/img/stereo/example_003/left.png" width="260px">
+                        <img src="./public/img/stereo/example_003/right.png" width="260px">
+                    </p>
+                    <p>
+                        <img src="./public/img/stereo/example_004/dis.png" width="260px">
+                        <img src="./public/img/stereo/example_004/left.png" width="260px">
+                        <img src="./public/img/stereo/example_004/right.png" width="260px">
+                    </p>
+                    <p>
+                        <img src="./public/img/stereo/example_006/dis.png" width="260px">
+                        <img src="./public/img/stereo/example_006/left.png" width="260px">
+                        <img src="./public/img/stereo/example_006/right.png" width="260px">
+                    </p>
+                    <p>
+                        <img src="./public/img/stereo/example_008/dis.png" width="260px">
+                        <img src="./public/img/stereo/example_008/left.png" width="260px">
+                        <img src="./public/img/stereo/example_008/right.png" width="260px">
+                    </p>
+                </div>
+                <div class="cb"></div>
+                <p class="title-1 mt60" id="to_data_href">2 · Data Download</p>
+                <p class="title-2 mt20">Training data</p>
+                <div class="down_list mt20 clearfix">
+                    <a class="down_btn fl mr10" value="stereo_train_1.zip">stereo_train_1.zip</a>
+                    <a class="down_btn fl mr10" value="stereo_train_2.zip">stereo_train_2.zip</a>
+                    <a class="down_btn fl mr10" value="stereo_train_3.zip">stereo_train_3.zip</a>
+                </div>
+                <p class="title-2 mt20">Testing data</p>
+                <div class="down_list mt20 clearfix">
+                    <a class="down_btn fl mr10" value="stereo_test.zip">stereo_test.zip</a>
+                    <!-- <a class="down_btn fl mr10" href="https://ad-apolloscape.cdn.bcebos.com/stereo%2Fstereo_test.zip">stereo_test.zip</a> -->
+
+                </div>
+
+                <div class="cb"></div>
+                <p class="title-1 mt60" id="to_dataset_href">3 · Data Structure</p>
+
+                <p class="word-1 mt10">The structure of the dataset is following:</p>
+                <p class="word-1 mt10">•    intrinsic.txt: intrinsic parameters</p>
+                <p class="word-1 mt10">•	fg_mask: foreground mask</p>
+                <p class="word-1 mt10">•	bg_mask: background mask</p>
+                <p class="word-1 mt10">•	Camera5: images captured by camera 5</p>
+                <p class="word-1 mt10">•	Camera6: images captured by camera 6</p>
+                <p class="word-1 mt10">•	disparity: the ground truth disparity</p>
+                <p class="word-1 mt10">Note that to show the disparity better, the disparity value is 200 times larger than groundtruth. If you upload results, the results should also be increased 200 times.</p>
+
+                <!-- <p class="word-1 mt40">
+                    Training:
+                </p>
+                <div class="ml40">
+                    <p class="word-1">
+                        camera5:
+                    </p>
+                    <p class="word-1 indent">
+                        ∙ 171206_034630104_Camera_5.jpg
+                      <br>
+                        ∙ 171206_034642401_Camera_5.jpg
+                      <br>
+                        ∙ 171206_035656400_Camera_5.jpg
+                      <br>
+                        ∙ ...
+                    </p>
+                    <p class="word-1">
+                        camera6:
+                    </p>
+                    <p class="word-1 indent">
+                        ∙ 171206_034630104_Camera_6.jpg
+                      <br>
+                        ∙ 171206_034642401_Camera_6.jpg
+                      <br>
+                        ∙ 171206_035656400_Camera_6.jpg
+                      <br>
+                        ∙ ...
+                    </p>
+                    <p class="word-1">
+                        disparity:
+                    </p>
+                    <p class="word-1 indent">
+                        ∙ 171206_034630104_Camera_5.png
+                      <br>
+                        ∙ 171206_034642401_Camera_5.png
+                      <br>
+                        ∙ 171206_035656400_Camera_5.png
+                      <br>
+                        ∙ ...
+                    </p>
+                </div>
+                <p class="word-1 mt40">
+                    Testing:
+                </p>
+                <p class="word-1 indent">
+                    ∙ 171206_034559609_Camera_5.png
+                  <br>
+                    ∙ ...
+                </p> -->
+                <div class="cb"></div>
+                <article class="markdown-body entry-content" itemprop="text">
+                    <!-- <p class="title-1 mt60" id="to_structure_href">4 · Scripts</p>
+                    <p class="word-1 mt20" >
+                        The evaluation scripts are released on github
+                        <a href="https://github.com/ApolloScapeAuto/dataset-api/tree/master/lane_segmentation">here</a>.
+                    </p> -->
+                    <p class="title-1 mt60" id="to_evaluation_href">4 · Evaluation</p>
+                    <p class="word-1 mt20">
+                        The evaluation code are released on github <a href="https://github.com/ApolloScapeAuto/dataset-api/tree/master/stereo">here</a>.
+                    </p>
+                    <p class="title-1 mt60" id="to_metric_href">5 · Metric formula</p>
+                    <p class="word-1 mt20">
+                        For each image, given the predicted disparity di and the ground truth di*, the metric for evaluation is defined as:
+                    </p>
+                    <img src="public/img/scene/stereo.jpg" align="middle" width="400px" style="max-width:100%">
+                    <p class="word-1 mt20">
+                        Here the mask can be either foreground (fg), background (bg) or the whole region (merge of fg and bg). N is the number of image
+                    </p>
+
+
+                    <p class="title-1 mt60" id="to_rules_href">6 · Rules of ranking</p>
+                    <p class="word-1 mt10">Result benchmark will be:</p>
+                    <table class="github_table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Method</th>
+                                <th align="center">D1_all</th>
+                                <th align="center">D1_fg</th>
+                                <th align="center">D1_bg</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>xxx</td>
+                                <td align="center">xx</td>
+                                <td align="center">
+                                    xx
+                                </td>
+                                <td align="center">
+                                    xx
+                                </td>
+                                <td align="center">
+                                    xx
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p class="title-1 mt60" id="to_submission_href">7 · Format of submission file</p>
+                    <p class="word-1">{split}/{data_type}/{image_name}</p>
+                    data_type:
+                    disparity: the estimated disparity</p>
+                </article>
+
+                <div class="mt60" style="font-size: 18px;text-align: center;">The dataset we released is &nbsp;desensitized street view &nbsp;for academic use only.</div>
+            </div>
+            <div class="cb"></div>
+        </div>
+    </section>
+    <div class="protocol-bg" id="protocol"></div>
+    <div class="protocol_container" id="protocol_container">
+    </div>
+    <div class="done_load"></div>
+    <script type="text/javascript" src="/js/stereo.js"></script>
+
+    <link rel="import" href="/common/footer.html?__inline">
+</body>
+
+</html>

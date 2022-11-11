@@ -1,0 +1,245 @@
+<!-- htmlcs-disable-->
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="ie"><![endif]-->
+<html lang="en">
+<head>
+    <link rel="import" href="/common/meta.html?__inline">
+    <link rel="import" href="/common/css.html?__inline">
+    <link rel="import" href="/common/js.html?__inline">
+
+    <link rel="stylesheet" type="text/css" href="common/bootstrap/bootstrap.css">
+
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 750px)" href="css/submit/index.css">
+    <link rel="stylesheet" type="text/css" media="screen and (max-width: 750px)" href="css/submit/m-index.css">
+</head>
+
+<body>
+    <link rel="import" href="common/header.html?__inline">
+
+    <section class="main-wrapper">
+        <div class="main">
+            <div class="left-content-wrapper" style="margin-top:20px;">
+
+                <div class="left-content-item">
+                    <!-- <label for="submit-name">Submission Name<sup class="must-start" >*</sup></label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="submit-name" >
+                    </div> -->
+                    <label>Task<sup class="must-start" >*</sup></label>
+                    <div class="input-group mb-3">
+                        <select class="custom-select" id="taskSelect">
+                            <option selected>Choose...</option>
+                            <option value="scene">scene</option>
+                            <option value="lane-segmentation">lane-segmentation</option>
+                            <option value="car-instance">car-instance</option>
+                            <option value="self-localization">self-localization</option>
+                            <option value="trajectory">trajectory</option>
+                            <option value="detection">detection</option>
+                            <option value="tracking">tracking</option>
+                            <option value="stereo">stereo</option>
+                        </select>
+                    </div>
+                    <label>Method Name <sup class="must-start" >*</sup><span style="font-size:12px">（Noticing that for same method name, only the highest rank will appear. Please submit meaningful method name. Method Name and Team name are 4 words minimum and 25 words maximum.）</span></label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="method-name">
+                    </div>
+                    <label for="submit-team">Team<span style="font-size:12px">(Please file company/organization/a list of authors name here)</span><sup class="must-start" ></sup></label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="submit-team">
+                    </div>
+                    <label>Method Description<sup class="must-start" ></sup></label>
+                    <div class="input-group mb-3">
+                        <textarea rows="3" class="form-control" id="method-details">
+                    </div>
+                    <label>Publication <sup class="must-start" ></sup></label>
+                    <div class="input-group mb-3">
+                        <textarea rows="3" class="form-control" id="publication">
+                    </div>
+                    <label>Code Link <sup class="must-start" ></sup></label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="code-link">
+                    </div>
+                    <label>Run Time<sup class="must-start" ></sup></label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="run-time">
+                    </div>
+                    <div class="form-group">
+                        <label for="fileInput">Submission file upload(zip)</label>
+                        <div>
+                            <span class="btn btn-outline-dark btn-file">
+                            Select file less than 1Gb
+                                <input type="file" id="fileInput"/>
+                            </span>
+                            <button id="upload" class="btn btn-outline-primary" type="submit">Upload</button>
+
+                        </div>
+                        <div class="file-display">
+                            <span class="file-name"></span>
+                            <span class="file-id"></span>
+                        </div>
+
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 0;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
+                    </div>
+
+                    <div id="error-content">
+                    </div>
+
+                </div>
+
+                <div class="left-content-item">
+                </div>
+
+                <div class="left-content-itemm submit-achievement">
+                    <button type="button" class="btn btn-primary submit-btn">Submit</button>
+                </div>
+                <!-- <div>
+                    Noticing that for same method name, only the highest rank will appear. Please submit meaningful method name. Method Name and Team name are 4 words minimum and 25 words maximum. Thanks!
+                </div> -->
+                <div class="alert alert-danger submit-alert" role="alert">
+                    A simple danger alert—check it out!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <link rel="import" href="common/footer.html?__inline">
+</body>
+
+<script type="text/javascript" src="/js/lib/bce-bos-uploader.bundle.min.js"></script>
+<script type="text/javascript">
+    /* eslint-disable */
+    var uploader;
+    $.getJSON("/server/eccv/upload",function(result){
+        if (result.status === 0) {
+            var dataBucket          = result.data.bucket;
+            var dataEndPoint        = result.data.end_point;
+            var dataAccessKeyId     = result.data.AccessKeyId;
+            var dataSecretAccessKey = result.data.SecretAccessKey;
+            var dataToken           = result.data.SessionToken;
+
+            uploader = new baidubce.bos.Uploader({
+                browse_button: '#fileInput',
+                bos_bucket: dataBucket,
+                bos_endpoint: dataEndPoint,
+                bos_ak: dataAccessKeyId,
+                bos_sk: dataSecretAccessKey,
+                max_retries: 5,
+                bos_multipart_parallel: 5,
+                bos_multipart_auto_continue: true,
+                chunk_size: '8mb',
+                uptoken:dataToken,
+                max_file_size: '1Gb',
+                accept: 'zip',
+                init: {
+                    FileUploaded: function (_, file, info) {
+                        $('.submit-btn').attr("data-uploadFile", file.name);
+                        $('.submit-btn').attr("data-bucket", dataBucket);
+                        $('.submit-btn').css("visibility", "visible");
+                    },
+                    UploadProgress: function (_, file, progress, event) {
+                        if (progress) {
+                            $('#fileInput').css("display", "none");
+                            $('.btn-file').addClass("disabled");
+                            $('button[type=submit]').attr('disabled', true);
+                        }
+                        var processBar = (progress * 100).toFixed(2);
+                        $('[role=progressbar]').css("width", processBar + '%');
+                        $('[role=progressbar]').text((progress * 100).toFixed(1) + '%');
+                        $('[role=progressbar]').attr("aria-valuenow", processBar);
+                        console.log(progress);
+                    },
+                    FilesAdded: function (_, files) {
+                        $('.file-name').html(files[0].name);
+                    },
+                    UploadComplete: function() {
+                        $('button[type=submit]').attr('disabled', true);
+                    },
+                    Error: function (_, error, file) {
+                        if ($.isPlainObject(error)) {
+                        }
+                        var errorMessage = $.isPlainObject(error) ? JSON.stringify(error) : String(error);
+                        console.log(error);
+                    }
+
+                }
+            });
+        }
+
+        if (result.status === 400) {
+            console.log(result);
+            window.location.href = '/login.html';
+        }
+
+    });
+    $("#upload").click(function () {
+        uploader.start();
+        $('.file-id').remove();
+    });
+
+    $('.submit-btn').click(function () {
+
+        var sName   = $('#submit-name').val() || 'default';
+        var tName   = $('#submit-team').val() || 'Anonymous Submission';
+        var mName   = $('#method-name').val();
+        var mDetail = $('#method-details').val() || 'TBA';
+        var task    = $('#taskSelect').val();
+        var pub    = $('#publication').val() || 'TBA';
+        var link    = $('#code-link').val() || 'N/A';
+        var time    = $('#run-time').val() || 'N/A';
+
+        var fName   = $(this).attr("data-uploadFile");
+        var bucket  = $(this).attr("data-bucket");
+
+        if (task === 'Choose...') {
+            $('#taskSelect').focus();
+        }
+        if (!mDetail) {
+            $('#method-details').focus();
+        }
+        if (!mName) {
+            $('#method-name').focus();
+        }
+        if (!tName) {
+            $('#submit-team').focus();
+        }
+        if (!sName) {
+            $('#submit-name').focus();
+        }
+
+        // if($('#submit-name').val().length>25){
+        //     $('#error-content').text('Submission Name is 25 words maximum');
+        //     return false;
+        // }
+        if(tName.length>25 || tName.length<4){
+            $('#error-content').text('Team name are 4 words minimum and 25 words maximum.')
+            return false;
+        }
+        if(mName.length>25 || mName.length<4){
+            $('#error-content').text('Method Name are 4 words minimum and 25 words maximum.')
+            return false;
+        }
+
+        $('#error-content').empty()
+
+        if (task !== 'Choose...' && mDetail && mName && tName && sName) {
+            _hmt.push(['_trackEvent', 'submit', tName, task]);
+            $.post("/server/eccv/submit",{submissionName: sName, teamName: tName, methodName: mName, methodDesc: mDetail, fileID:fName, task: task, bucket: bucket, publication: pub, code_link: link, run_time: time },function(result){
+                if (result.status === 0) {
+                    window.location.href="/achievement.html";
+                } else {
+                    $('.submit-alert').text(result.message);
+                    $('.submit-alert').css("visibility", "visible");
+                }
+
+            });
+        }
+
+    });
+
+
+
+</script>
+</html>
